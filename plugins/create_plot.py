@@ -45,7 +45,7 @@ class CreateFramesDataPlotPlugin(BasePlugin):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('infile')
-    parser.add_argument('outfile', nargs='?', default='frames.png')
+    parser.add_argument('infile', help='Sqlite database path')
+    parser.add_argument('outfile', nargs='?', default='frames.png', help='Resulting plot image path')
     args = parser.parse_args()
     CreateFramesDataPlotPlugin().handle(args)

@@ -32,7 +32,7 @@ class ExtractVideoPlugin(BasePlugin):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('infile')
-    parser.add_argument('outfile', nargs='?', default='outfile.mkv')
+    parser.add_argument('infile', help='Media resource path')
+    parser.add_argument('outfile', nargs='?', default='outfile.mkv', help='Extracted video stream path')
     args = parser.parse_args()
     ExtractVideoPlugin().handle(args)

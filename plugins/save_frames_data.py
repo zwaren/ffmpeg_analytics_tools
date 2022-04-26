@@ -46,7 +46,7 @@ class SaveFramesDataToSQLitePlugin(BasePlugin):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('infile')
-    parser.add_argument('outfile', nargs='?', default='frames.db')
+    parser.add_argument('infile', help='Json file path')
+    parser.add_argument('outfile', nargs='?', default='frames.db', help='Resulting sqlite database path')
     args = parser.parse_args()
     SaveFramesDataToSQLitePlugin().handle(args)

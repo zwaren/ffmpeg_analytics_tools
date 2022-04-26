@@ -28,12 +28,12 @@ class DumpFramesDataPlugin(BasePlugin):
         :return:
         """
         with open(outfile, 'w') as output:
-            subprocess.run(f'ffprobe -show_frames -print_format json {infile}', stdout=output)
+            subprocess.run(f'ffprobe -show_frames -select_streams v:0 -print_format json {infile}', stdout=output)
 
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('infile')
-    parser.add_argument('outfile', nargs='?', default='outfile.json')
+    parser.add_argument('infile', help='Media resource path')
+    parser.add_argument('outfile', nargs='?', default='outfile.json', help='Resulting json file path')
     args = parser.parse_args()
     DumpFramesDataPlugin().handle(args)

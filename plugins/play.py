@@ -29,6 +29,6 @@ class PlayPlugin(BasePlugin):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('infile')
+    parser.add_argument('infile', help='Media resource path')
     args = parser.parse_args()
     PlayPlugin().handle(args)
