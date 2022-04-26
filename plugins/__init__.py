@@ -1,0 +1,6 @@
+from plugins.base_plugin import BasePlugin
+from plugins.create_plot import CreateFramesDataPlotPlugin
+from plugins.dump_frames_data import DumpFramesDataPlugin
+from plugins.extract import ExtractVideoPlugin
+from plugins.play import PlayPlugin
+from plugins.save_frames_data import SaveFramesDataToSQLitePlugin
